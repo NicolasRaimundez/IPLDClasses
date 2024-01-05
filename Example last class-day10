@@ -1,0 +1,37 @@
+# Data
+
+drones_times = {
+    "s_drone": [23, 5, 12],
+    "l_drone": [15, 10],
+    "wing_drone": [40, 52, 27],
+}
+
+
+# app
+option = 0
+
+while option != 3:
+    
+    print("\n\nSelect and option:")
+    print("------------------")
+    print("1. Add drone flight time")
+    print("2. Show drone flight time")
+    print("3. Exit")
+
+    option = int(input("Select an option: "))
+
+    if option == 1:
+        drone_id = input("Enter the drone id: ")
+        flight_time = input("Enter the new flight time")
+
+        drones_times[drone_id].append(flight_time)
+
+    elif option == 2:
+        for drone in drones_times:
+            print(drones_times, drones_times[drone], "total:", sum(drones_times[drone]))
+
+    elif option == 3:
+        print("Goodbye!")
+
+    else:
+        print("Invalid option")
